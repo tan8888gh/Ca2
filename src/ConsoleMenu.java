@@ -1,13 +1,13 @@
+
 import java.util.Scanner;
 
 public class ConsoleMenu {
- 
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Company company = new Company("Business Gnómes Ltd");
 
-     Manager manager = new Manager("ManagerName", "manager@example.com", "Gnomeo", "smurf");
+        Manager manager = new Manager("ManagerName", "manager@example.com", "Gnomeo", "smurf");
 
         System.out.print("Username: ");
         String username = scanner.nextLine();
@@ -27,23 +27,23 @@ public class ConsoleMenu {
             scanner.nextLine(); // Consume newline
 
             switch (option) {
-               case 1:
-                        System.out.print("Enter name: ");
-                        String name = scanner.nextLine();
-                        String email;
-                        while (true) {
-                                System.out.print("Enter email: ");
-                                email = scanner.nextLine();
-                                if (email.contains("@")) {
-                                  break; // Breaks out of the loop if email is valid
-                                    } else {
-                                     System.out.println("Error: Email must contain an '@' symbol. Please enter a valid email.");
-                                    }
-                                 }
-                         Employee newEmployee = new Employee(name, email);
-                         company.addNewStaff(newEmployee);
-                         System.out.println("New staff added.");
-                         break;
+                case 1:
+                    System.out.print("Enter name: ");
+                    String name = scanner.nextLine();
+                    String email;
+                    while (true) {
+                        System.out.print("Enter email: ");
+                        email = scanner.nextLine();
+                        if (email.contains("@")) {
+                            break; // Breaks out of the loop if email is valid
+                        } else {
+                            System.out.println("Error: Email must contain an '@' symbol. Please enter a valid email.");
+                        }
+                    }
+                    Employee newEmployee = new Employee(name, email);
+                    company.addNewStaff(newEmployee);
+                    System.out.println("New staff added.");
+                    break;
                 case 2:
                     System.out.println("Current staff:");
                     company.listEmployees(0); // Assuming 0 lists all
